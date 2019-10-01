@@ -61,3 +61,16 @@ class Clock implements IClock {
     this.time = date
   }
 }
+
+//===================
+//Array of interface keys
+
+interface Styles {
+  [key: string]: string
+}
+
+const css: Styles = {
+  border: '1px, solid, black',
+  marginTop: '2px',
+  borderRadius: '2px'
+}
