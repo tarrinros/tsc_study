@@ -25,6 +25,39 @@ const rect2: Rect = {
   }
 };
 rect2.color = 'white';
+// rect2.id = '2343';
 
 const rect3 = {} as Rect;
 // const rect4 = <Rect>{}; //deprecated
+
+//==============================
+// Interfaces inheritance
+
+interface RectWithArea extends Rect {
+  getArea: () => number // arrow function of number type
+}
+
+const rect5: RectWithArea = {
+  id: '123',
+  size: {
+    width: 20,
+    height: 20
+  },
+  getArea(): number {
+    return this.size.weight * this.size.height
+  }
+};
+
+//===================
+
+interface IClock {
+  time: Date,
+  setTime(date: Date): void
+}
+
+class Clock implements IClock {
+  time: Date = new Date()
+  setTime(date: Date): void {
+    this.time = date
+  }
+}
