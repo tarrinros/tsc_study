@@ -27,3 +27,23 @@ class Car {
 
 // =====================
 // Modificators
+
+class Animal {
+  protected voice: string = ''
+  public color: string = 'red'
+  private go() {
+    console.log('Go!')
+  }
+}
+
+class Cat extends Animal {
+  public setVoice(voice: string): void {
+    this.voice = voice
+    this.go = 'go!' // only inside the ancestor class
+  }
+}
+
+const cat = new Cat()
+cat.go // only inside the ancestor class
+cat.color // method with for uotside handling
+cat.voice // only for use in ancestor and heir classes
