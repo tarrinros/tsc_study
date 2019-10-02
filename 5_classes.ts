@@ -47,3 +47,21 @@ const cat = new Cat()
 cat.go // only inside the ancestor class
 cat.color // method with for uotside handling
 cat.voice // only for use in ancestor and heir classes
+
+// ==========================
+// Abstract classes
+
+abstract class Component {
+  abstract render(): void
+  abstract info(): string
+}
+
+class AppComponent extends Component {
+  render(): void {
+    console.log('Component on render')
+  }
+
+  info(): string {
+    return 'This is info method';
+  }
+}
